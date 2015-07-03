@@ -1,0 +1,10 @@
+mixin input(inputid, inputtype, label)    
+  if inputtype != 'submit'
+    input(type=inputtype, id=inputid)
+  else
+    button(type=inputtype)
+      | Send
+      i.fa.fa-send
+    
+  if inputtype != 'submit'
+    label(for=inputid)=label

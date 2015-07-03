@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+  <title>Andy Pyle &bull; Front End Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand">
+        <h1><a href="#">Andy Pyle</a></h1>
+      </div>
+      <nav><a href="#" class="navToggle"><i class="fa fa-bars fa-2x"></i></a>
+        <ul class="nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="cover">
+      <div class="coverTint"></div>
+      <div class="coverContent">
+        <h1>Hey!</h1><span class="greeting1">I'm Andy.</span><span class="greeting2">I create cool things for the web.</span>
+      </div>
+    </section>
+    <section id="about">
+      <div class="heading">
+        <h2>Who am I?</h2>
+      </div>
+      <div class="about-image"><img src="https://placekitten.com/g/500/500"></div>
+      <div class="content">
+        <div class="introduce">
+          <h3>Let Me Introduce Myself...</h3>
+          <p>
+            I'm an aspiring Web Developer. I enjoy good company, 
+            and I drink more coffee than I probably should.
+          </p>
+          <p>
+            I was born in Santa Barbara, CA. My family relocated 
+            about an hour north, to the small town of Nipomo,
+            when I was about three years of age. I've been here 
+            my entire life, and I'm very happy to call it home.
+          </p>
+        </div>
+        <div class="questions">
+          <h3>Moreover...</h3>
+          <div class="question">           
+            <h4 class="question">Sup?</h4>
+            <p class="answer">Nada</p>
+          </div>
+          <div class="question">           
+            <h4 class="question">What are you even doing?</h4>
+            <p class="answer">Nothin, really.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="heading">
+        <h2>Projects</h2>
+      </div>
+      <div class="portfolio-projects">
+        <article class="project">
+          <div class="proj-heading">
+            <h3>Name of Project</h3>
+          </div>
+          <div class="proj-thumb"><img src="thumb.jpg" alt="Name of Project"/></div>
+          <div class="proj-excerpt">
+            <p>Short description of project 1.</p>
+          </div>
+          <div class="proj-more"><a href="#" data-modal="nameofproject" class="modalBtn"><i class="fa fa-plus fa-2x"></i></a></div>
+          <div class="proj-footer"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">JS</span><span class="proj-tag">Angular</span>
+          </div>
+          <div id="nameofproject" class="proj-modal">
+            <div class="modal-header">
+              <h3>Name of Project</h3><a href="#" class="modalClose"><i class="fa fa-times fa-3x"></i></a>
+            </div>
+            <div class="modal-images"><img src="img1.jpg"/><img src="img2.jpg"/><img src="img3.jpg"/><img src="img4.jpg"/><img src="img5.jpg"/>
+            </div>
+            <div class="modal-description">
+              <p>Longer description.</p>
+            </div>
+            <div class="modal-footer"><span class="modal-tag">HTML</span><span class="modal-tag">CSS</span><span class="modal-tag">JS</span><span class="modal-tag">Angular</span>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="proj-heading">
+            <h3>Another Project</h3>
+          </div>
+          <div class="proj-thumb"><img src="thumb2.jpg" alt="Another Project"/></div>
+          <div class="proj-excerpt">
+            <p>Short description of project 3.</p>
+          </div>
+          <div class="proj-more"><a href="#" data-modal="anotherproject" class="modalBtn"><i class="fa fa-plus fa-2x"></i></a></div>
+          <div class="proj-footer"><span class="proj-tag">Meteor</span><span class="proj-tag">Node</span>
+          </div>
+          <div id="anotherproject" class="proj-modal">
+            <div class="modal-header">
+              <h3>Another Project</h3><a href="#" class="modalClose"><i class="fa fa-times fa-3x"></i></a>
+            </div>
+            <div class="modal-images"><img src="img1.jpg"/><img src="img2.jpg"/><img src="img3.jpg"/>
+            </div>
+            <div class="modal-description">
+              <p>Longer description.</p>
+            </div>
+            <div class="modal-footer"><span class="modal-tag">Meteor</span><span class="modal-tag">Node</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="heading">
+        <h2>Contact</h2>
+      </div>
+      <div class="content">
+        <p>Drop me a line!</p>
+        <form id="contactForm">
+          <div class="contact-name">
+            <input type="text" id="name"/>
+            <label for="name">First &amp; Last Name</label>
+          </div>
+          <div class="contact-email">
+            <input type="email" id="email"/>
+            <label for="email">Email</label>
+          </div>
+          <div class="contact-submit">
+            <button type="submit">Send<i class="fa fa-send"></i></button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer><span>footer stuff</span></footer>
+  </main>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/velocity/velocity.min.js"></script>
+  <script src="bower_components/velocity/velocity.ui.min.js"></script>
+  <script src="js/myScripts.js"></script>
+</body>

@@ -1,0 +1,111 @@
+include mixins/nav
+include mixins/questions
+include mixins/projects
+include mixins/form
+
+mixin lorem 
+  p ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididun ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+doctype html
+head
+  title Andy Pyle &bull; Front End Developer
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+   
+  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css')
+  link(rel='stylesheet', href='css/style.min.css')
+  
+body
+  main
+    header
+      .brand
+        h1
+          a(href='#') Andy Pyle
+      
+      nav
+        a.navToggle(href='#')
+          i.fa.fa-bars.fa-2x
+        
+        ul.nav
+          +navLink('Home','#')
+          +navLink('About','#about')
+          +navLink('Projects','#projects')
+          +navLink('Contact','#contact')
+          
+          
+    
+    section#cover
+      .coverTint
+      .coverContent
+        h1 Hey!
+        span.greeting1 I'm Andy.
+        span.greeting2 I create cool things for the web.
+    
+    section#about
+      .heading
+        h2 Who am I?
+      
+      .about-image
+        img(src='https://placekitten.com/g/500/500')
+        
+      .content
+        .introduce
+          h3 Let Me Introduce Myself...
+          p I'm an aspiring Web Developer. I enjoy good company, 
+            | and I drink more coffee than I probably should.
+            
+          p I was born in Santa Barbara, CA. My family relocated 
+            | about an hour north, to the small town of Nipomo,
+            | when I was about three years of age. I've been here 
+            | my entire life, and I'm very happy to call it home.
+            
+        .questions
+          h3 Moreover...
+          +question('Sup?','Nada')
+          +question('What are you even doing?','Nothin, really.')
+          
+        
+    section#projects
+      .heading
+        h2 Projects
+        
+      .portfolio-projects
+        +project('Name of Project',
+        '#proj2',
+        "Short description of project 1.",
+        'thumb.jpg',
+        ['img1.jpg','img2.jpg','img3.jpg','img4.jpg','img5.jpg'],
+        'HTML','CSS','JS','Angular')
+        
+        +project('Another Project',
+        '#proj3',
+        "Short description of project 3.",
+        'thumb2.jpg',
+        ['img1.jpg','img2.jpg','img3.jpg'],
+        'Meteor','Node')
+    
+    section#contact
+      .heading
+        h2 Contact
+        
+      .content
+        p Drop me a line!
+        form#contactForm
+          .contact-name
+            +input('name', 'text', 'First & Last Name')
+          .contact-email
+            +input('email', 'email', 'Email')
+          .contact-submit
+            +input('submit', 'submit')
+          
+    
+    footer
+      span footer stuff
+    
+  script(src='bower_components/jquery/dist/jquery.min.js')
+  script(src='bower_components/velocity/velocity.min.js')
+  script(src='bower_components/velocity/velocity.ui.min.js')
+  script(src='js/myScripts.js')
+  
+    
+    

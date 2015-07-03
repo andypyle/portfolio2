@@ -1,0 +1,39 @@
+include images
+mixin project(title, url, excerpt, thumb, imageurls, ...tags)
+  article.project
+    .proj-heading
+      h3=title
+      
+    .proj-thumb
+      img(src=thumb, alt=title)
+      
+    .proj-excerpt
+      p=excerpt
+      
+    .proj-more
+      a.modalBtn(href='#', data-modal=title.replace(/\s/g, '').toLowerCase())
+              i.fa.fa-plus.fa-2x
+              
+    .proj-footer
+      each tag in tags
+        span.proj-tag=tag
+        
+    .proj-modal(id=title.replace(/\s/g, '').toLowerCase())
+      .modal-header
+        h3=title
+        a.modalClose(href='#')
+          i.fa.fa-times.fa-3x
+          
+      .modal-images
+        +images(imageurls)
+        
+      .modal-description
+        p Longer description.
+        
+      .modal-footer
+        each tag in tags
+          span.modal-tag=tag
+        
+        
+    
+        
