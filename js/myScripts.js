@@ -15,9 +15,9 @@ $(document).ready(function(){
     //var topOfScreen = $(window).scrollTop();
 
     $('body').addClass('noScroll');
-    //$('body').offset({top: 0, left: 0});
+    //$('body').offset({top:-1000, left: 0});
 
-    $('body').bind('touchstart', function(event) {
+    $('body').bind('touchstart touchmove', function(event) {
       event.preventDefault();
       return;
     });
@@ -38,7 +38,7 @@ $(document).ready(function(){
     var modal = $(this).parent().parent('.proj-modal');
 
     $('body').removeClass('noScroll');
-    $('body').unbind('touchstart');
+    $('body').unbind('touchstart touchmove');
 
     $('main').velocity('stop')
       .velocity({
