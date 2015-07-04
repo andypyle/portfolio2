@@ -18,10 +18,12 @@ $(document).ready(function(){
     $('body').css('top',-topOfScreen);
 
     console.log(topOfScreen);
+    /*
     $('body').offset({
-      'top' : -topOfScreen,
+      'top' : 0,
       'left': 0
       });
+    */
 
     $('body').bind('touchstart', function(event) {
       event.preventDefault();
