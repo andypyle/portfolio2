@@ -373,8 +373,9 @@ body {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.006) !important;
 }
 .noScroll {
+  position: relative;
   overflow: hidden;
-  pointer-events: none;
+  pointer-events: none !important;
 }
 p {
   font-size: 1.35rem;
