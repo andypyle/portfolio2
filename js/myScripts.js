@@ -15,7 +15,7 @@ $(document).ready(function(){
     var topOfScreen = $(window).scrollTop();
 
     $('body').addClass('noScroll');
-    //$('body').css('top',-topOfScreen);
+    $('body').css('top',-topOfScreen);
 
     console.log(topOfScreen);
     $('body').offset({
