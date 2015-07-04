@@ -38,6 +38,7 @@ $(document).ready(function(){
     var modal = $(this).parent().parent('.proj-modal');
 
     $('body').removeClass('noScroll');
+    $('body').css('top',-topOfScreen);
     $('body').unbind('touchstart');
 
     $('main').velocity('stop')
