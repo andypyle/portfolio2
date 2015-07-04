@@ -12,12 +12,12 @@ $(document).ready(function(){
     var modalId = '#' + $(this).data('modal');
     var modal = $(modalId);
 
-    //var topOfScreen = $(window).scrollTop();
+    var topOfScreen = $(window).scrollTop();
 
     $('body').addClass('noScroll');
-    //$('body').offset({top:-1000, left: 0});
+    $('body').offset({top: -topOfScreen, left: 0});
 
-    $('body').bind('touchstart touchmove', function(event) {
+    $('body').bind('touchstart', function(event) {
       event.preventDefault();
       return;
     });
@@ -38,7 +38,7 @@ $(document).ready(function(){
     var modal = $(this).parent().parent('.proj-modal');
 
     $('body').removeClass('noScroll');
-    $('body').unbind('touchstart touchmove');
+    $('body').unbind('touchstart');
 
     $('main').velocity('stop')
       .velocity({
