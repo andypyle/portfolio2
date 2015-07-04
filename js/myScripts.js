@@ -15,7 +15,13 @@ $(document).ready(function(){
     var topOfScreen = $(window).scrollTop();
 
     $('body').addClass('noScroll');
-    $('body').css('top',-topOfScreen);
+    //$('body').css('top',-topOfScreen);
+
+    console.log(topOfScreen);
+    $('body').offset({
+      'top' : -topOfScreen,
+      'left': 0
+      });
 
     $('body').bind('touchstart', function(event) {
       event.preventDefault();
@@ -36,10 +42,12 @@ $(document).ready(function(){
   closeModal.bind('click', function(e){
     e.preventDefault();
     var modal = $(this).parent().parent('.proj-modal');
+    var topOfScreen = $('body').offset().top;
+    //console.log(topOfScreen);
 
-    $('body').removeClass('noScroll');
-    $('body').css('top',-topOfScreen);
-    $('body').unbind('touchstart');
+
+
+
 
     $('main').velocity('stop')
       .velocity({
@@ -48,6 +56,20 @@ $(document).ready(function(){
 
     modal.velocity('stop')
       .velocity({opacity: 0}, {display: 'none'},{ duration: 350 });
+
+    console.log(topOfScreen);
+
+
+    /*
+    $(window).offset({
+      'top' : -topOfScreen,
+      'left': 0
+      });
+    */
+
+    $('body').removeClass('noScroll');
+      $(window).scrollTop(-topOfScreen);
+    $('body').unbind('touchstart');
 
     //modal.delay(900).removeClass('addFlex');
   });

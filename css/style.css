@@ -839,6 +839,7 @@ main section#contact .content form#contactForm .contact-submit button[type=submi
   position: fixed !important;
   top: 0;
   z-index: 70;
+  height: 100vh;
   min-height: 100vh;
   max-height: 100vh;
   width: 100%;
