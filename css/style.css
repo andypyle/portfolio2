@@ -366,7 +366,7 @@ html {
   min-height: 100%;
 }
 body {
-  font-family: 'Lato', 'Helvetica Neue', 'Verdana', sans-serif;
+  font-family: 'Muli', 'Helvetica Neue', 'Verdana', sans-serif !important;
   background-color: #ffffff;
   color: #19282e;
   -webkit-font-smoothing: antialiased !important;
@@ -374,6 +374,7 @@ body {
 }
 .noScroll {
   overflow: hidden;
+  pointer-events: none;
 }
 p {
   font-size: 1.35rem;
@@ -387,6 +388,7 @@ h5,
 h6 {
   margin: 0;
   line-height: 1.5;
+  font-family: 'Montserrat', 'Helvetica Neue', 'Arial', sans-serif;
 }
 a {
   text-decoration: none;
@@ -446,6 +448,7 @@ main header {
 main header .brand h1 {
   font-size: 1.75rem;
   text-transform: uppercase;
+  font-weight: 700;
 }
 main header nav {
   display: block;
@@ -486,7 +489,7 @@ main header nav ul.nav li {
 main header nav ul.nav li a {
   display: block;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   padding: 1rem;
 }
 main section {
@@ -578,9 +581,9 @@ main section#cover span.greeting1 {
   margin-top: 0;
 }
 main section#cover span.greeting2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 300;
-  width: 60%;
+  width: 65%;
 }
 main section#about .content {
   margin: 0;
@@ -806,12 +809,18 @@ main section#contact .content form#contactForm .contact-submit button[type=submi
      -moz-transition: all 250ms ease-in-out;
           transition: all 250ms ease-in-out;
 }
+.addFlex {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -moz-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.red {
+  background-color: red !important;
+}
 .proj-modal {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+  pointer-events: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -819,23 +828,23 @@ main section#contact .content form#contactForm .contact-submit button[type=submi
      -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: space-around;
-  -webkit-align-items: space-around;
-     -moz-box-align: space-around;
-      -ms-flex-align: space-around;
-          align-items: space-around;
-  background-color: rgba(25, 40, 46, 0.85);
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: rgba(25, 40, 46, 0.9);
+  color: white;
   position: fixed !important;
   top: 0;
-  left: 0;
-  right: 0;
-  min-height: 100%;
-  width: 100%;
   z-index: 70;
-  color: white;
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 1rem;
 }
 .proj-modal a {
   color: white;
@@ -847,6 +856,13 @@ main section#contact .content form#contactForm .contact-submit button[type=submi
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
      -moz-box-pack: justify;
@@ -857,53 +873,44 @@ main section#contact .content form#contactForm .contact-submit button[type=submi
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 1rem;
-  width: 100%;
-  z-index: 75;
-}
-.proj-modal .modal-header h3 {
-  font-size: 1.95rem;
-  font-weight: 200;
-}
-.proj-modal .modal-images {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-     -moz-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 .proj-modal .modal-description {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-     -moz-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   -webkit-flex: 1;
+     -moz-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 .proj-modal .modal-footer {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+     -moz-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.proj-modal .modal-footer span {
+  font-size: .9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: .45rem;
+  margin: .25rem;
+  background-color: rgba(25, 40, 46, 0.55);
+  border-radius: .25rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+.proj-modal .modal-footer span:hover {
+  cursor: default;
+}
+.proj-modal .modal-footer span:last-of-type {
+  margin-right: 0;
 }
 footer {
   display: -webkit-box;

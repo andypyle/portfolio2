@@ -1,20 +1,23 @@
 $(document).ready(function(){
   var modals = $('article.project').find('.proj-modal');
   modals.detach();
-  modals.insertAfter('main');
+  modals.insertAfter('body');
   modals.hide();
 
-  var launchModal = $('article.project').find('a.modalBtn');
+  var launchModal = $('a.modalBtn');
   var closeModal = modals.find('.modal-header a.modalClose');
 
-  launchModal.bind('click', function(e){
+  launchModal.click(function(e){
     e.preventDefault();
     var modalId = '#' + $(this).data('modal');
     var modal = $(modalId);
 
-    $('body').addClass('noScroll');
+    //var topOfScreen = $(window).scrollTop();
 
-    $('main').bind('touchstart', function(event) {
+    $('body').addClass('noScroll');
+    //$('body').offset({top: 0, left: 0});
+
+    $('body').bind('touchstart', function(event) {
       event.preventDefault();
       return;
     });
@@ -25,7 +28,9 @@ $(document).ready(function(){
       },{duration: 250});
 
     modal.velocity('stop')
-      .velocity("fadeIn", { duration: 350 })
+      .velocity("fadeIn", {display: 'flex'},{ duration: 350 });
+
+    //modal.addClass('addFlex');
   });
 
   closeModal.bind('click', function(e){
@@ -33,7 +38,7 @@ $(document).ready(function(){
     var modal = $(this).parent().parent('.proj-modal');
 
     $('body').removeClass('noScroll');
-    $('main').unbind('touchstart');
+    $('body').unbind('touchstart');
 
     $('main').velocity('stop')
       .velocity({
@@ -41,7 +46,9 @@ $(document).ready(function(){
       },{duration: 250});
 
     modal.velocity('stop')
-      .velocity("fadeOut", { duration: 350 });
+      .velocity({opacity: 0}, {display: 'none'},{ duration: 350 });
+
+    //modal.delay(900).removeClass('addFlex');
   });
 
     var navTog = $('a.navToggle');
