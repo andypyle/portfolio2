@@ -15,7 +15,7 @@ $(document).ready(function(){
     var topOfScreen = $(window).scrollTop();
 
     $('body').addClass('noScroll');
-    $('body').offset({top: -topOfScreen, left: 0});
+    $('body').css('top',-topOfScreen);
 
     $('body').bind('touchstart', function(event) {
       event.preventDefault();
