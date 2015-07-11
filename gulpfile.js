@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 	minify = require('gulp-minify-css')
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename')
-	gutil = require('gulp-util');
+	gutil = require('gulp-util'),
+	serve = require('gulp-serve');
 
 
 var lessOpts = {
@@ -63,8 +64,10 @@ gulp.task('jade', function(){
 		.pipe(gulp.dest(jadeOpts.out));
 });
 
+gulp.task('serve', serve('.'));
+
 gulp.task('watch', function(){
 	gulp.watch(['src/less/**/*.less', 'src/jade/*.jade'], ['less','jade']);
 });
 
-gulp.task('default', ['less','jade', 'watch']);
+gulp.task('default', ['less','jade','serve','watch']);

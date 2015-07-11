@@ -258,16 +258,50 @@ main {
     &#projects {
       margin: 0;
       padding-bottom: 0;
+      .heading {
+        margin-bottom: .5rem;
+      }
       .portfolio-projects {
         border-bottom: 1px dotted @darkText;
         padding-bottom: 1.5rem;
+        columns: 1;
+        column-gap: 1rem;
+
+        @media screen and (min-width:650px){
+          columns: 2;
+        }
+
+        @media screen and (min-width:900px){
+          columns: 3;
+        }
       }
       article.project {
         color: white;
         padding: .75rem;
-        margin: 1rem 0;
+        margin: .5rem 0;
         background-color: lighten(@darkText, 40%);
         border-radius: .25rem;
+        min-width: 100%;
+        display: inline-block !important;
+
+
+        &:first-of-type {
+          margin: 1rem 0 .5rem;
+        }
+
+        &:last-of-type {
+          margin: .5rem 0 1rem;
+        }
+
+        @media screen and (min-width: 600px){
+          &:first-of-type {
+            margin: .5rem 0;
+          }
+          &:last-of-type {
+            margin: .5rem 0;
+          }
+        }
+
         .proj-heading {
 
         }

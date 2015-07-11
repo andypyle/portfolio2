@@ -17,14 +17,6 @@ $(document).ready(function(){
     $('body').addClass('noScroll');
     $('body').css('top',-topOfScreen);
 
-    console.log(topOfScreen);
-    /*
-    $('body').offset({
-      'top' : 0,
-      'left': 0
-      });
-    */
-
     $('body').bind('touchstart', function(event) {
       event.preventDefault();
       return;
